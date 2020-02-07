@@ -45,6 +45,7 @@ app.get("/train/data", function(req, res) {
 app.get("/train/bi", function(req, res) {
     res.render("bi")
 })
-app.listen(3100, process.env.IP, function() {
+const PORT = process.env.PORT || 5000
+app.listen(PORT, process.env.IP, function() {
     console.log("Product started")
 })
