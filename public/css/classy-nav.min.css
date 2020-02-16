@@ -412,7 +412,7 @@ img {
 .megamenu-item.active>.dd-arrow::after {
     width: 8px;
     height: 1px;
-    background-color: #000;
+    background-color: white;
     content: '';
     position: absolute;
     right: -3px;
@@ -424,7 +424,7 @@ img {
 .megamenu-item .dd-arrow::before {
     width: 8px;
     height: 1px;
-    background-color: #000;
+    background-color: white;
     content: '';
     position: absolute;
     top: 0;
@@ -443,7 +443,7 @@ img {
 .classynav>ul>li.has-down.active>.dd-arrow::before {
     width: 8px;
     height: 1px;
-    background-color: #000;
+    background-color: white;
     content: '';
     position: absolute;
     top: 0;
@@ -462,7 +462,7 @@ img {
 .megamenu-item.active>.dd-arrow::before {
     width: 8px;
     height: 1px;
-    background-color: #000;
+    background-color: white;
     content: '';
     position: absolute;
     top: 0;
