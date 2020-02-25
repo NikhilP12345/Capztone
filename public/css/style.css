@@ -166,7 +166,7 @@ img {
 /* Section Padding */
 
 .section-padding-100 {
-    padding-top: 100px;
+    padding-top: 36px;
     padding-bottom: 100px;
     background-color: #292929;
 }
@@ -184,9 +184,10 @@ img {
 }
 
 .section-padding-100-70 {
-    padding-top: 100px;
-    padding-bottom: 70px;
-    background-color: #484848;
+    padding-top: 0px;
+    padding-bottom: 16px;
+    align-items: center;
+    background-color: #292929;
 }
 
 
@@ -209,7 +210,7 @@ img {
 }
 
 .section-heading h3 {
-    font-size: 34px;
+    font-size: 31px;
     margin-bottom: 0;
     font-weight: 600;
 }
@@ -227,6 +228,21 @@ img {
 .section-heading.white span,
 .section-heading.white h3 {
     color: orange;
+}
+
+.row1 {
+    display: flex;
+}
+
+.column1 {
+    flex: 33.33%;
+    padding: 5px;
+}
+
+@media screen and (max-width: 500px) {
+    .column1 {
+        width: 100%;
+    }
 }
 
 
@@ -1093,9 +1109,9 @@ img {
 .single-top-popular-course .popular-course-thumb {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 46%;
-    flex: 0 0 46%;
-    max-width: 46%;
-    width: 46%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
     height: 350px;
 }
 

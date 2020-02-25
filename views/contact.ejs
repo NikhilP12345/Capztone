@@ -1,14 +1,14 @@
 <%- include ('./partials/header') %>
-    <div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
+    <div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
+        <div class="bradcumbContent">
+            <h2>Contact</h2>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <div class="map-area wow fadeInUp" data-wow-delay="300ms">
+        <div id="googleMap"></div>
     </div>
     <section class="contact-area">
         <div class="container">
@@ -27,11 +27,11 @@
 
                                     <!-- Contact Social Info -->
                                     <div class="contact-social-info d-flex mb-30">
-                                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                                        <!-- <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a> -->
+                                        <a href="https://www.facebook.com/Capztone-Innovative-Solution-102952757846253/?modal=admin_todo_tour"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="https://twitter.com/capztone"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <!-- <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a> -->
+                                        <!-- <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a> -->
                                         <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                                     </div>
 
@@ -40,7 +40,7 @@
                                         <div class="contact-icon mr-15">
                                             <i class="icon-placeholder"></i>
                                         </div>
-                                        <p>4127/ 5B-C Mislane Road,<br> Gibraltar, UK</p>
+                                        <p>Kuvemphu Layout 117, 3rd Cross Road, Gubbi Cross, Kothanur, <br>Bengaluru, Karnataka 560077</p>
                                     </div>
 
                                     <!-- Single Contact Info -->
@@ -77,4 +77,39 @@
             </div>
         </div>
     </section>
-    <%- include ('./partials/footer') %>
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="bottom-footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p>
+                            Copyright &copy; All rights reserved | This template is made with by <a href="https://colorlib.com" target="_blank" style="color: orange;">Capztone</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="/js/active.js"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0GnVe3hVnKs7DF9KuTkXdjB4NVLWWK8U&callback=initMap"> -->
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxiVydL22avd5I4BZPz4qq61LeVfLwrDU&callback=initMap">
+    </script>
+    <script src="/js/google-map/map-active.js"></script>
+    </body>
+
+    </html>
