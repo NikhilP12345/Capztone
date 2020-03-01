@@ -1233,6 +1233,10 @@ img {
     height: 620px;
 }
 
+#data-content {
+    margin-left: 257px;
+}
+
 @media only screen and (max-width: 767px) {
     .popular-course-details-area .single-top-popular-course .popular-course-thumb {
         -webkit-box-flex: 0;
@@ -1255,6 +1259,9 @@ img {
     }
     #arrow {
         visibility: hidden;
+    }
+    #data-content {
+        margin-left: 0px;
     }
 }
 
