@@ -1236,6 +1236,10 @@ img {
     margin-left: 257px;
 }
 
+#logo-height {
+    height: 39px;
+}
+
 @media only screen and (max-width: 767px) {
     .popular-course-details-area .single-top-popular-course .popular-course-thumb {
         -webkit-box-flex: 0;
@@ -1265,6 +1269,12 @@ img {
     #social-top {
         visibility: hidden;
         display: none;
+    }
+    #call-text {
+        font-size: 12px;
+    }
+    #logo-height {
+        height: 29px;
     }
 }
 
