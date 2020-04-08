@@ -42,6 +42,9 @@ app.get("/kid", function(req, res) {
 app.get("/train/data", function(req, res) {
     res.render("data")
 })
+app.get("/job", function(req, res) {
+    res.render("job")
+})
 app.get("/train/bi", function(req, res) {
     res.render("bi")
 })
