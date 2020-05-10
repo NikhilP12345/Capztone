@@ -45,6 +45,15 @@ app.get("/train/data", function(req, res) {
 app.get("/job", function(req, res) {
     res.render("job")
 })
+app.get("/register", function(req, res) {
+    res.render("register")
+})
+app.post("/register", (req, res) => {
+    const body = req.body;
+    let addDoc = db.collection('Register').add(body).then(ref => {
+        res.redirect("/");
+    });
+})
 app.get("/train/bi", function(req, res) {
     res.render("bi")
 })
@@ -60,6 +69,7 @@ app.get("/train/bi/tableau", function(req, res) {
 app.get("/train/data/syllabus", function(req, res) {
     res.render("syllabus")
 })
+
 const PORT = process.env.PORT || 5000
 app.listen(PORT, process.env.IP, function() {
     console.log("Product started")
