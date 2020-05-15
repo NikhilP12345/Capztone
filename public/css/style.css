@@ -1239,6 +1239,9 @@ img {
 #logo-height {
     height: 39px;
 }
+#registerClass{
+    left: 81%;
+}
 
 @media only screen and (max-width: 767px) {
     .popular-course-details-area .single-top-popular-course .popular-course-thumb {
@@ -1275,6 +1278,9 @@ img {
     }
     #logo-height {
         height: 29px;
+    }
+    #registerClass{
+        left: 75%;
     }
 }
 
