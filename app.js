@@ -3,6 +3,11 @@ var app = express()
 var bodyParser = require("body-parser")
 var admin = require('firebase-admin');
 var serviceAccount = require("./capztone-214f8-firebase-adminsdk-hjiug-fe9e84fb2f.json")
+const nodemailer = require('nodemailer');
+const sendgridTransport = require('nodemailer-sendgrid-transport');
+
+
+
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
@@ -10,6 +15,15 @@ var db = admin.firestore();
 app.set("view engine", "ejs")
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"))
+
+const transporter = nodemailer.createTransport(
+    sendgridTransport({
+      auth: {
+        api_key:
+          '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'
+      }
+    })
+  );
 
 app.get("/", function(req, res) {
     res.render("index")
@@ -32,9 +46,10 @@ app.get("/contact", function(req, res) {
 })
 app.post("/contact", function(req, res) {
     const body = req.body;
-    let addDoc = db.collection('Record').add(body).then(ref => {
+    let addDoc = db.collection('Record').add(body)
+    .then(ref => {
         res.redirect("/");
-    });
+    })
 })
 app.get("/kid", function(req, res) {
     res.render("kid")
@@ -50,9 +65,42 @@ app.get("/register", function(req, res) {
 })
 app.post("/register", (req, res) => {
     const body = req.body;
-    let addDoc = db.collection('Register').add(body).then(ref => {
+    
+    let addDoc = db.collection('Register').add(body)
+    .then(ref => {
+        return ref;
+    })
+    .then(doc => {
         res.redirect("/");
-    });
+        console.log("Hello")
+        transporter.sendMail({
+            to: "jell@capztone.com",
+            from: "info@capztone.com",
+            subject: 'New Mail',
+            html: `
+                <h1>This is the new Enqiry</h1>
+                <p> Name - ${body.Name}</p>
+                <p> Number - ${body.num}</p>
+                <p> Address - ${body.Address}</p>
+                <p> Country - ${body.Country}</p>
+                <p> Course - ${body.Course}</p>
+                <p> DOB - ${body.Dateofbirth}</p>
+                <p> Email - ${body.Email}</p>
+                <p> Message - ${body.Message}</p>
+                <p> StartDate - ${body.startDate}</p>
+            `
+        }, (err, info) => {
+            if(err){
+                console.log(err);
+                res.redirect("/")
+            }
+            
+        });
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/")
+    })
 })
 app.get("/train/bi", function(req, res) {
     res.render("bi")

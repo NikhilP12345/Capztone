@@ -12,11 +12,11 @@
                         <!-- <div class="col-12 col-lg-7"> -->
                             <div class="contact-form-area wow fadeInUp" data-wow-delay="500ms" style="background-color: #292929;">
                                 <form action="/register" method="POST">
-                                    <input type="text" class="form-control" id="name" placeholder="Name" name="Name">
-                                    <input type="text" class="form-control" id="number" placeholder="PhoneNo" name="num" pattern="[1-9]{1}[0-9]{9}" maxlength="10">
-                                    <input type="email" class="form-control" id="email" placeholder="E-mail" name="Email">
-                                    <input type="date" name="Dateofbirth" id="dateofbirth" class="form-control"/>
-                                    <select id="name" name="Country" class="form-control" style="height: 55px;">
+                                    <input type="text" class="form-control" id="name" placeholder="Name" name="Name" required>
+                                    <input type="text" class="form-control" id="number" placeholder="PhoneNo" name="num" pattern="[1-9]{1}[0-9]{9}" maxlength="10" required>
+                                    <input type="email" class="form-control" id="email" placeholder="E-mail" name="Email" required>
+                                    <input type="date" name="Dateofbirth" id="dateofbirth" class="form-control" required/>
+                                    <select id="name" name="Country" class="form-control" style="height: 55px;" required>
                                         <option value="Afganistan">Afghanistan</option>
                                         <option value="Albania">Albania</option>
                                         <option value="Algeria">Algeria</option>
@@ -264,12 +264,13 @@
                                         <option value="Zambia">Zambia</option>
                                         <option value="Zimbabwe">Zimbabwe</option>
                                      </select>
-                                    <input type="text" class="form-control" id="name" placeholder="Address" name="Address">  
-                                    <select id="name" name="Course" class="form-control" style="height: 55px;">
+                                    <input type="text" class="form-control" id="name" placeholder="Address" name="Address" required>  
+                                    <select id="name" name="Course" class="form-control" style="height: 55px;" required>
                                         <option value="dataScience">Data Science</option>
-                                        <option value="AI">AI</option>
+                                        <option value="App Development">App Development</option>
                                         <option value="BI">Bussiness Intelligence</option>
                                     </select>
+                                    <input placeholder="Start Date" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" name="startDate" required/>
                                     <textarea name="Message" class="form-control" id="message" cols="30" rows="10" placeholder="Message" name="Message"></textarea>
                                     <button class="btn academy-btn mt-30" type="submit">Submit</button>
                                 </form>
