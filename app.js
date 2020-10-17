@@ -11,7 +11,7 @@ app.set("view engine", "ejs")
 app.set('views', 'views');
 
 
-const adminRoutes = require('./routes/admin');
+// const adminRoutes = require('./routes/admin');
 const customRoutes = require('./routes/custom');
 const authRoutes = require('./routes/auth');
 
