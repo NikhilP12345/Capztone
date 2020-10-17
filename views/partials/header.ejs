@@ -34,6 +34,7 @@
     gtag('config', 'UA-157522723-1');
 </script>
 
+</script>
 <body style="background-color: #292929;">
     <!-- ##### Preloader ##### -->
     <div id="preloader">
@@ -102,6 +103,9 @@
                                     <li><a href="/job">Job</a></li>
                                     <li><a href="/solution">Solution</a></li>
                                     <li><a href="/staff">Staffing</a></li>
+                                    <!--<li> <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUSKH3ACHFNvrxXFgGJAZQdZWFfbNwTlnL5lJyESgf6EXvJQ/viewform">Click for register</a></li> -->
+                                   
+
                                     <!-- <li><a href="/kid">Kids&nbsp;Program</a>
                                         <ul class="dropdown" style="width: 330px;">
                                             <li><a href="/">Home&nbsp;tutoring&nbsp;&&nbsp;Learning&nbsp;Support</a></li>
@@ -121,6 +125,7 @@
                                     </li> -->
 
                                     <li><a href="/contact">Contact</a></li>
+
                                 </ul>
 
                             </div>
@@ -134,8 +139,27 @@
                 <div
                 id="registerClass" style="float: left;
                 position: absolute;
-                margin-top: -61px;">
-                    <a href="/register" id = "reg">Click To Enroll</a>
+                margin-top: -73px;" >
+                    <% if(Authenticated){ %>
+                    <div class="dropDown">
+                        <button class="dropButton" id = "reg"><%=user.displayName%>
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                            <div class="dropDownContent">
+                                <a href="#">Receipt</a>
+                                <a href="/logout">Logout</a>
+                            </div>
+                    </div>
+                    <% } else {%>
+                        <button id="myBtn">Open Modal</button>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <a href = "/auth/google" style = "color: black">Sign in with google</a>
+                            </div>
+
+                        </div>
+                    <% } %>
                 </div>
             </div>
         </div>

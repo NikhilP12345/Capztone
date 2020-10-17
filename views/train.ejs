@@ -3,33 +3,20 @@
         <br>
         <br>
     </div>
-    <div class="popular-course-details-area wow fadeInUp" data-wow-delay="300ms">
-        <div class="single-top-popular-course d-flex align-items-center flex-wrap" style="background-color: #484848;background-image: url(img/bg-img/Codes.jpg); background-size: cover;">
-            <div class="popular-course-content" style="background-color: #484848; ">
-                <h5>Data Science</h5>
-                <br>
-                <p>Captzone Provides Best Data Science Training in Bangalore. We train the students from basic level to advanced concepts with the real-time environment. We offer Best Data Science Courses in Bangalore with 100% Placement Assistance. We rated
-                    as the No 1 Training Institute for Data Science/Analytics Courses with Python, R, SAS, and Excel. From this Data Science Training, you will get real time exposure in statistics, Machine Learning, Deep Learning, Tensorflow, Artificial
-                    intelligence and machine learning algorithm Concepts.</p>
-                <a href="train/data" class="btn academy-btn btn-sm mt-15">See More</a>
+    <% snapshot.forEach(doc => { %>
+        <div class="popular-course-details-area wow fadeInUp" data-wow-delay="300ms">
+            <div class="single-top-popular-course d-flex align-items-center flex-wrap" style="background-color: #484848;background-image: url(<%= doc.data().Image%>); background-size: cover;">
+                <div class="popular-course-content" style="background-color: #484848; ">
+                    <h5><%= doc.data().Name%></h5>
+                    <br>
+                    <p><%= doc.data().Content%></p>
+                    <a href="train/<%= doc.data().Name%>" class="btn academy-btn btn-sm mt-15">See More</a>
+                </div>
+                <div class="popular-course-thumb bg-img"></div>
             </div>
-            <div class="popular-course-thumb bg-img"></div>
         </div>
-    </div>
-    <div class="popular-course-details-area wow fadeInUp bgImage" data-wow-delay="300ms">
-        <div class="single-top-popular-course d-flex align-items-center flex-wrap" style="background-color: #484848;background-image: url(img/bg-img/bi3.jpg); background-size: cover;">
-            <div class="popular-course-content" style="background-color: #484848;">
-                <h5>Bussiness Intelligence</h5>
-                <br>
-                <p>Captzone Provides Business Intelligence reporting and Analytics Training in Bangalore. We train the students from basic level to advanced concepts with the real-time environment. We offer Business Intelligence Courses in Bangalore with
-                    100% Placement Assistance. We rated as the No 1 Training Institute for Data Analytics reporting Courses with Power BI , Qlikview and Tableau. We offer real time exposure in SQL queries , develop complex reports and troubleshoot the
-                    issues.
-                </p>
-                <a href="train/bi" class="btn academy-btn btn-sm mt-15">See More</a>
-            </div>
-            <div class="popular-course-thumb bg-img"></div>
-        </div>
-    </div>
+    <% })%>
+
 
 
     <%- include ('./partials/footer') %>

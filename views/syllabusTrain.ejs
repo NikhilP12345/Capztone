@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>CapztOne</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/core-img/clogo.jpg">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/acc.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157522723-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-157522723-1');
+</script>
+
+<body style="background-color: #292929;">
+<!-- ##### Preloader ##### -->
+<div id="preloader">
+    <i class="circle-preloader"></i>
+</div>
+
+
+<!-- ##### Header Area Start ##### -->
+<header class="header-area">
+
+    <!-- Top Header Area -->
+    <div class="top-header">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100">
+                    <div class="header-content h-100 d-flex align-items-center justify-content-between">
+                        <div class="academy-logo">
+                            <a href="/"><img src="/img/core-img/logo1.png" alt="" id="logo-height"></a>
+                        </div>
+                        <div class="login-content">
+                            <h3 style="color: orange;" id="call-text">Call Us At +91 74603 04567</h3>
+                        </div>
+                        <div style="margin-left: -887px; height: 100px;" id="social-top">
+                            <a href="https://www.facebook.com/Capztone-Innovative-Solution-102952757846253/?modal=admin_todo_tour" class="facebook" style="padding: 5px 7px;"><i class="fa fa-facebook" style="padding: 5px 6px;"></i></a>
+                            <a href="https://twitter.com/capztone" class="twitter" style="padding:5px 10px;"><i class="fa fa-twitter" style="padding:5px 0px;"></i></a>
+                            <!-- <a href="#" class="google"><i class="fa fa-google"></i></a> -->
+                            <a href="#" class="linkedin" style="padding: 5px 7px;"><i class="fa fa-linkedin" style="padding: 5px 5px;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar Area -->
+    <div class="academy-main-menu">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Menu -->
+                <nav class="classy-navbar justify-content-between" id="academyNav">
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+
+                        <!-- close btn -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/train">Training</a>
+                                    <ul class="dropdown">
+                                        <li><a href="/train/bi">Business&nbsp;Intelligence</a></li>
+                                        <li><a href="/train/data">Data&nbsp;Science</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/job">Jobs</a></li>
+                                <li><a href="/solution">Solution</a></li>
+                                <li><a href="/staff">Staffing</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                            </ul>
+
+                        </div>
+                        <!-- Nav End -->
+
+                    </div>
+
+
+                </nav>
+            </div>
+            <div
+                    id="registerClass" style="float: left;
+                position: absolute;
+                margin-top: -61px;">
+                <a href="/register" id = "reg">Click To Enroll</a>
+            </div>
+        </div>
+    </div>
+    <div class="icon-bar sticky-wrapper is-sticky">
+        <a href="https://www.facebook.com/Capztone-Innovative-Solution-102952757846253/?modal=admin_todo_tour" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="https://twitter.com/capztone" class="twitter"><i class="fa fa-twitter"></i></a>
+        <!-- <a href="#" class="google"><i class="fa fa-google"></i></a> -->
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <!-- <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> -->
+
+    </div>
+</header>
+<div class="breadcumb-area bg-img" style="background-color: #292929; height: 109px;">
+    <div class="bradcumbContent">
+        <h2><%=SyllabusTrain.data().Name%></h2>
+    </div>
+</div>
+<div class="bradcumbContent" style="margin-left: 43px;" id="arrow">
+    <a href="/train/bi"><img src="/img/bg-img/back-arow.png" alt="" srcset="" style="height: 48px;"></a>
+</div>
+<section class="card" style="margin-top: 80px; background-color: #292929;">
+    <% let temp1 = 1; for(const i of SyllabusTrain.data().syllabi) { %>
+        <article class="wid">
+            <h1 data-accordion-element-trigger style="background-color: #292929; margin-bottom: -0.5rem;"><%=i.Name%></h1>
+            <div data-accordion-element-content class="content">
+                <table style="    padding: 25px 30px 40px;
+                    background: #E8EAF6;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #000;">
+                    <tbody>
+                    <% let temp2 = 1; for(let j = 0 ; j < i.Content.length ; j++) { %>
+                        <tr>
+                            <td width="75"><%=temp1%>-<%=temp2%></td>
+                            <td width="550"><%= i.Content[j] %></td>
+                            <td class="dbcenter" width="100"><%= i.Time[j] %></td>
+                        </tr>
+                    <% temp2++;} %>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    <% temp1++;} %>
+</section>
+<!-- partial -->
+<script src='https://cdn.jsdelivr.net/gh/cant89/gianni-accordion-js/dist/gianniAccordion.min.js'></script>
+<script src="/js/acc.js"></script>
+
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area">
+    <div class="bottom-footer-area" style="background-color: black;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p style="background-color: black; color: white;">
+                        Copyright &copy; All rights reserved | This template is made with by <a href="/" target="_blank" style="color: orange;">Capztone</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ##### Footer Area Start ##### -->
+
+<!-- ##### All Javascript Script ##### -->
+<!-- jQuery-2.2.4 js -->
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="/js/bootstrap/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="/js/bootstrap/bootstrap.min.js"></script>
+<!-- All Plugins js -->
+<script src="/js/plugins/plugins.js"></script>
+<!-- Active js -->
+<script src="/js/active.js"></script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0GnVe3hVnKs7DF9KuTkXdjB4NVLWWK8U&callback=initMap"> -->
+</script>
+</body>
+
+</html>

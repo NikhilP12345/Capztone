@@ -1,0 +1,281 @@
+<%- include ('./partials/header') %>
+<div class="breadcumb-area bg-img" style="background-color: #292929; height: 109px;">
+    <div class="bradcumbContent">
+        <h2><%= Name %></h2>
+    </div>
+</div>
+
+<section class="about-us-area mt-50 section-padding-100">
+    <div class="container">
+        <div class="row">
+            <br>
+        </div>
+        <div class="row">
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-12 wow fadeInUp" data-wow-delay="500ms" style="text-align: justify;">
+                <p><%= Head.data().headContent %></p>
+            </div>
+        </div>
+        <div class="row">
+            <br>
+        </div>
+        <div id="accordion row" class="accordion-1">
+            <% let a = 1; About.forEach(doc => { %>
+                <div class="card" style="background-color: #292929;">
+                    <% if(a == 1) { %>
+                        <div class="card-header" id="h-<%=a%>">
+
+                            <a class="d-block text-left " data-toggle="collapse" data-target="#c-<%=a%>" href="#" aria-expanded="true" aria-controls="c-<%=a%>" style="color: orange;">
+
+                                <%= doc.data().Question%><i class="fa fa-angle-down"></i>
+
+                            </a>
+
+                        </div>
+
+                        <div id="c-<%=a%>" class="collapse show " aria-labelledby="h-<%=a%>" data-parent="#accordion">
+
+                        <div class="card-body" style="color: white;">
+
+                            <p><%= doc.data().Answer%></p>
+
+                        </div>
+
+                    </div>
+                    <%} else { %>
+                        <div class="card-header" id="h-<%=a%>">
+
+                            <a class="d-block text-left collapsed" data-toggle="collapse" data-target="#c-<%=a%>" href="#" aria-expanded="true" aria-controls="c-<%=a%>" style="color: orange;">
+
+                                <%= doc.data().Question%><i class="fa fa-angle-down"></i>
+
+                            </a>
+
+                        </div>
+
+                        <div id="c-<%=a%>" class="collapse" aria-labelledby="h-<%=a%>" data-parent="#accordion">
+
+                        <div class="card-body" style="color: white;">
+
+                            <p><%= doc.data().Answer%></p>
+
+                        </div>
+
+                    </div>
+                    <%}%>
+
+                </div>
+            <%a++;})%>
+        </div>
+        <div class="breadcumb-area bg-img" style="background-color: #292929; height: 109px;">
+            <div class="bradcumbContent">
+                <h2>Syllabus</h2>
+            </div>
+        </div>
+        <div class="top-popular-courses-area mt-50 section-padding-100-70" style="padding-top: 38px;">
+            <div class="container">
+                <div class="row">
+                    <% Syllabus.forEach(doc => { %>
+                        <div class="col-12 col-lg-3">
+                            <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
+                                <div class="popular-course-thumb bg-img" style="background-color: black;">
+                                    <a href="/train/<%=Name%>/<%=doc.data().Name%>"><img src="<%=doc.data().Image%>" alt="" srcset="" style="height: 100%;"></a>
+                                </div>
+                                <p style=" color: white; padding-left: 123px; "><%= doc.data().Name%></p>
+                            </div>
+                        </div>
+                    <% })%>
+                </div>
+            </div>
+        </div>
+        <div>
+            <br>
+
+        </div>
+        <div class="tab--1 ui-mt-30 row">
+
+            <ul class="nav nav-tabs " id="myTab" role="tablist">
+
+                <li class="nav-item">
+
+                    <a class="nav-link active" id="batch-schedule-tab" data-toggle="tab" href="#batch-schedule" role="tab" aria-controls="Overview" aria-selected="true" style="color: orange;">Batch Schedule</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" id="exam-certification-tab" data-toggle="tab" href="#exam-certification" role="tab" aria-controls="exam-certification" aria-selected="false" style="color: orange;">Exam & Certification</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" id="trainer-profile-tab" data-toggle="tab" href="#trainer-profile" role="tab" aria-controls="trainer-profile" aria-selected="false" style="color: orange;">Trainer Profile</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" id="placements-tab" data-toggle="tab" href="#placements" role="tab" aria-controls="placements" aria-selected="false" style="color: orange;">Placements</a>
+
+                </li>
+
+                <!-- <li class="nav-item">
+
+                    <a class="nav-link" id="syllabus-tab" data-toggle="tab" href="#syllabus" role="tab" aria-controls="syllabus" aria-selected="false" style="color: orange;">Syllabus</a>
+
+                </li> -->
+
+                <li class="nav-item">
+
+                    <a class="nav-link" id="faq-tab" data-toggle="tab" href="#faq" role="tab" aria-controls="faq" aria-selected="false" style="color: orange;">FAQ</a>
+
+                </li>
+
+            </ul>
+
+            <div class="tab-content cont" id="myTabContent">
+
+                <div class="tab-pane fade show active" id="batch-schedule" role="tabpanel" aria-labelledby="batch-schedule-tab" style="background-color: #292929; padding: 0px 17px 20px;">
+
+                    <p>Captzone provides flexible timings to all our students. Here are the <%= Name%> Training Classes in Chennai Schedule in our branches. If this schedule doesn’t match please let us know. We will try to arrange appropriate
+                        timings based on your flexible timings.</p>
+
+
+
+                    <div class="row" style="color: white;">
+                        <% Batch.forEach(doc => { %>
+                            <div class="col-md-6 ui-mb-20">
+
+                                <div class="box--2">
+
+                                    <div class="ui-header--style text-white ">
+
+                                        <h4 class="mb-0"><%= doc.data().Head%></h4>
+
+                                    </div>
+                                    <div>
+                                        <br>
+
+                                    </div>
+                                    <div class="ui-body">
+
+                                        <ul class="list-unstyled ui-box-style-2  p-0 m-0">
+                                            <% for(let i = 0 ; i < doc.data().When.length ; i++) {%>
+                                                <li><%= doc.data().When[i]%> </li>
+                                            <% }%>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        <%}) %>
+                    </div>
+
+                </div>
+
+
+
+                <div class="tab-pane fade" id="exam-certification" role="tabpanel" aria-labelledby="exam-certification-tab" style="background-color: #292929;  padding: 0px 17px 20px;color: white;">
+
+                    <p>Having a certificate for <%= Name %> will increase your placement chances in top companies. Candidates possessing <%= Name%> certificates stand out from the crowd and have a greater probability of achieving
+                        their dream careers. There are many standard industry recognizable data scientist certification programs.</p>
+
+
+
+                    <div id="accordion-2" class="accordion-1">
+                        <%let b = 1; Certification.forEach(doc => { %>
+                            <div class="card" style="background-color: #292929;">
+
+                                <div class="card-header" id="n-<%=b%>">
+
+                                    <a class="d-block text-left collapsed" data-toggle="collapse" data-target="#nc-<%=b%>" href="#" aria-expanded="true" aria-controls="n-<%=b%>" style="color: orange;">
+
+                                        <%= doc.data().Question%><i class="fa fa-angle-down"></i>
+
+                                    </a>
+
+                                </div>
+
+                                <div id="nc-<%=b%>" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+
+                                    <div class="card-body">
+
+                                        <p><%= doc.data().Answer %></p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        <% b++;})%>
+                    </div>
+
+
+
+                </div>
+
+                <div class="tab-pane fade" id="trainer-profile" role="tabpanel" aria-labelledby="trainer-profile-tab" style="background-color: #292929; padding: 0px 17px 20px;">
+
+                    <p><%= TProfile.data().Content%></p>
+
+                </div>
+
+                <div class="tab-pane fade" id="placements" role="tabpanel" aria-labelledby="placements-tab" style="background-color: #292929; padding: 0px 17px 20px;">
+
+                    <p><%= Placements.data().Content%></p>
+
+
+
+                </div>
+
+                <div class="tab-pane fade" id="faq" role="tabpanel" aria-labelledby="faq-tab" style="background-color: #292929; padding: 0px 17px 20px;">
+
+                    <div id="accordion-2" class="accordion-1">
+                        <% let c = 1; Faq.forEach(doc => { %>
+                            <div class="card">
+
+                                <div class="card-header" id="f-<%=c%>" style="background-color: #292929;">
+
+                                    <a class="d-block text-left collapsed" data-toggle="collapse" data-target="#fc-<%=c%>" href="#" aria-expanded="true" aria-controls="f-<%=c%>" style="color: orange;">
+
+                                        <%= doc.data().Question%><i class="fa fa-angle-down"></i>
+
+                                    </a>
+
+                                </div>
+
+                                <div id="fc-<%=c%>" class="collapse " aria-labelledby="headingOne" data-parent="#accordion" style="background-color: #292929;">
+
+                                    <div class="card-body" style="color: white; background-color: #292929;">
+
+                                        <p><%= doc.data().Answer %></p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        <% c++;})%>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+</section>
+
+<%- include ('./partials/footer') %>
