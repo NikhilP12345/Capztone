@@ -11,7 +11,7 @@ app.set("view engine", "ejs")
 app.set('views', 'views');
 
 
-// const adminRoutes = require('./routes/admin');
+const adminRoutes = require('./routes/admin');
 const customRoutes = require('./routes/custom');
 const authRoutes = require('./routes/auth');
 
@@ -29,7 +29,7 @@ var myLogger = function (req, res, next) {
     console.log('LOGGED')
     next()
 }
-// app.use('/admin', adminRoutes);
+app.use('/admin', adminRoutes);
 app.use(customRoutes);
 app.use(authRoutes);
 // app.use(errorController.get404);
