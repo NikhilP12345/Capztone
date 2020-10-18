@@ -3,14 +3,7 @@ const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
 
 var db = admin.firestore();
-const authCheck = (req, res, next) => {
-    if(!req.user){
-        res.redirect("/");
-    }
-    else{
-        next();
-    }
-}
+
 
 const transporter = nodemailer.createTransport(
     sendgridTransport({
@@ -190,7 +183,7 @@ exports.getCourses = async (req, res, next) => {
     const trainRef = db.collection('MainContent');
     const snapshot = await trainRef.get();
     if (snapshot.empty) {
-        console.log('No matching documents.');
+        console.log('No matching drgdocuments.');
         return;
     }
     snapshot.forEach(doc => {
@@ -198,7 +191,7 @@ exports.getCourses = async (req, res, next) => {
             course = doc.id
         }
     })
-    if(course == ""){
+    if(course == "" ){
         console.log("no Such Course")
     }
     else{
@@ -287,6 +280,31 @@ exports.getSyllabus = async (req, res, next) => {
     }
 
 
+}
+
+exports.getPayment = (req, res, next) => {
+    const productId = req.params.trainId;
+    let Authenticated = false;
+    let user = {}
+    if(!req.user){
+        Authenticated = false;
+    }
+    else{
+        Authenticated = true;
+        user = req.user
+    }
+
+    const paymenRef = db.collection('Trainings');
+    const payemntDoc = paymenRef.where("Name", "==", productId).get();
+    let trainDoc = {};
+    payemntDoc.forEach(doc => {
+        trainDoc = doc.data();
+    })
+    res.render('payment', {
+        Authenticated: Authenticated,
+        user: user,
+        trainDoc: trainDoc
+    })
 }
 
 exports.postRegister = (req, res, next) => {

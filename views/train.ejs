@@ -10,7 +10,10 @@
                     <h5><%= doc.data().Name%></h5>
                     <br>
                     <p><%= doc.data().Content%></p>
-                    <a href="train/<%= doc.data().Name%>" class="btn academy-btn btn-sm mt-15">See More</a>
+                    <a href="/train/<%= doc.data().Name%>" class="btn academy-btn btn-sm mt-15">See More</a>
+                    <% if(Authenticated) {%>
+                        <a href="/train/<%= doc.data().Name%>/payment" class="btn academy-btn btn-sm mt-15 secondButton">Payment</a>
+                    <% } %>
                 </div>
                 <div class="popular-course-thumb bg-img"></div>
             </div>

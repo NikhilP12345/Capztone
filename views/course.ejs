@@ -272,8 +272,15 @@
             </div>
 
         </div>
-
-
+        <% if(Authenticated) { %>
+            <a href="/train/<%=Name%>/payment">
+                <div class="breadcumb-area bg-img" style="background-color: #292929; height: 109px;">
+                    <div class="bradcumbContent">
+                        <h2>Proceed To Payment</h2>
+                    </div>
+                </div>
+            </a>
+        <% } %>
 
     </div>
 </section>

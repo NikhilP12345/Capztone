@@ -4,6 +4,15 @@ const customController = require('../controllers/custom');
 
 const router = express.Router();
 
+const authCheck = (req, res, next) => {
+    if(!req.user){
+        res.redirect("/");
+    }
+    else{
+        next();
+    }
+}
+
 router.get("/", customController.getIndex)
 
 router.get("/about", customController.getAbout)
@@ -25,6 +34,8 @@ router.get("/register", customController.getRegister)
 router.post("/register", customController.postRegister)
 
 router.get("/train/:trainId", customController.getCourses)
+
+router.get("/train/:trainId/payment", authCheck, customController.getPayment);
 
 router.get("/train/:trainId/:syllabusId", customController.getSyllabus);
 

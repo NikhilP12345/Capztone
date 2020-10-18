@@ -2155,11 +2155,19 @@ img {
 .dropDown:hover .dropDownContent {
     display: block;
 }
+
+.secondButton{
+    position: absolute;
+    left: 40%;
+}
 @media only screen and (max-width: 767px) {
     .dropDownContent{
         min-width: 91px;
     }
-
+    .secondButton{
+        position: absolute;
+        left: 66%;
+    }
 
 }
 /*# sourceMappingURL=style.css.map */
