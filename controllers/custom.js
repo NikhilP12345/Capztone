@@ -24,7 +24,7 @@ exports.getIndex = (req, res, next) => {
         Authenticated = true;
         user = req.user
     }
-    res.render("index",{
+    res.render("home/index",{
         Authenticated: Authenticated,
         user: user
     })
@@ -40,7 +40,7 @@ exports.getAbout = (req, res, next) => {
         Authenticated = true;
         user = req.user
     }
-    res.render("about",{
+    res.render("home/about",{
         Authenticated: Authenticated,
         user: user
     })
@@ -56,7 +56,7 @@ exports.getStaff = (req, res, next) => {
         Authenticated = true;
         user = req.user
     }
-    res.render("staff",{
+    res.render("home/staff",{
         Authenticated: Authenticated,
         user: user
     })
@@ -71,7 +71,7 @@ exports.getSolution = (req, res, next) => {
         Authenticated = true;
         user = req.user
     }
-    res.render("solution",{
+    res.render("home/solution",{
         Authenticated: Authenticated,
         user: user
     })
@@ -93,7 +93,7 @@ exports.getTrain = async (req, res, next) => {
         console.log('No matching documents.');
         return;
     }
-    res.render("train",{
+    res.render("course/train",{
         snapshot: snapshot,
         Authenticated: Authenticated,
         user: user
@@ -110,7 +110,7 @@ exports.getContact = (req, res, next) => {
         Authenticated = true;
         user = req.user
     }
-    res.render("contact",{
+    res.render("home/contact",{
         Authenticated: Authenticated,
         user: user
     })
@@ -126,7 +126,7 @@ exports.getStaff = (req, res, next) => {
         Authenticated = true;
         user = req.user
     }
-    res.render("staff",{
+    res.render("home/staff",{
         Authenticated: Authenticated,
         user: user
     })
@@ -143,7 +143,7 @@ exports.getJob = (req, res, next) => {
         Authenticated = true;
         user = req.user
     }
-    res.render("job",{
+    res.render("home/job",{
         Authenticated: Authenticated,
         user: user
     })
@@ -217,7 +217,7 @@ exports.getCourses = async (req, res, next) => {
             console.log("No matching document")
         }
         else{
-            res.render('course', {
+            res.render('course/course', {
                 Head: Head,
                 About: About,
                 Batch: Batch,
@@ -272,7 +272,7 @@ exports.getSyllabus = async (req, res, next) => {
         const syllabusT = db.collection('MainContent').doc(trainId).collection('Syllabus').doc(s);
         const SyllabusTrain = await syllabusT.get();
         // console.log(SyllabusTrain.data())
-        res.render('syllabusTrain', {
+        res.render('course/syllabusTrain', {
             SyllabusTrain:SyllabusTrain,
             Authenticated: Authenticated,
             user: user
@@ -300,7 +300,7 @@ exports.getPayment = (req, res, next) => {
     payemntDoc.forEach(doc => {
         trainDoc = doc.data();
     })
-    res.render('payment', {
+    res.render('course/payment', {
         Authenticated: Authenticated,
         user: user,
         trainDoc: trainDoc
