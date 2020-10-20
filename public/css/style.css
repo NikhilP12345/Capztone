@@ -2160,6 +2160,8 @@ img {
     position: absolute;
     left: 40%;
 }
+
+
 @media only screen and (max-width: 767px) {
     .dropDownContent{
         min-width: 91px;
