@@ -282,7 +282,7 @@ exports.getSyllabus = async (req, res, next) => {
 
 }
 
-exports.getPayment = (req, res, next) => {
+exports.getPayment = async (req, res, next) => {
     const productId = req.params.trainId;
     let Authenticated = false;
     let user = {}
@@ -293,12 +293,13 @@ exports.getPayment = (req, res, next) => {
         Authenticated = true;
         user = req.user
     }
-
-    const paymenRef = db.collection('Trainings');
-    const payemntDoc = paymenRef.where("Name", "==", productId).get();
+    const paymentRef = db.collection('Training');
+    const paymentDoc = await paymentRef.get();
     let trainDoc = {};
-    payemntDoc.forEach(doc => {
-        trainDoc = doc.data();
+    paymentDoc.forEach(doc => {
+        if(doc.data().Name == productId){
+            trainDoc = doc.data()
+        }
     })
     res.render('course/payment', {
         Authenticated: Authenticated,
