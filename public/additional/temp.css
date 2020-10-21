@@ -1,0 +1,23 @@
+#addNav{
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 40px;
+    background-color: orange;
+    color: white;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+    #addNav{
+        margin-left: 30px;
+        margin-right: 10px;
+        margin-top: 20px;
+        height: 59px;
+        display: inline-block; 
+    }
+
+    .addDisplay{
+        font-size: 12px;
+    }
+}
