@@ -8,6 +8,8 @@ function load() {
     $("#noOfAbout").focus();
     $("#noOfBatches").focus();
     $("#noOfExams").focus();
+    $("#noOfFaq").focus();
+    $("#noOfSyllabus").focus();
     $("#btnNoOfRec").click(function () {
         $("#dynamicText").empty();
         var NoOfRec = $("#noOfAbout").val();
@@ -35,7 +37,22 @@ function load() {
             createExam(noOfExam);
         }
     })
+    $("#btnFaq").click(function(){
+        $('#faqText').empty();
+        var noOfFaq = $("#noOfFaq").val();
 
+        if(noOfFaq > 0){
+            createFaq(noOfFaq);
+        }
+    })
+    $("#btnSyllabus").click(function(){
+        $('#syllabusText').empty();
+        var noOfBatch = $("#noOfSyllabus").val();
+
+        if(noOfBatch > 0){
+            createSyllabus(noOfBatch);
+        }
+    })
 }
 
 function createControll(NoOfRec) {
@@ -106,6 +123,38 @@ function createExam(NoOfRec) {
          "</div>";
         $("#examText").append(tbl);
         tbl = "";
+    }
+
+    
+}
+function createFaq(NoOfRec) {
+    var tbl = "";
+
+    for (var i = 1; i <= NoOfRec; i++) {
+        tbl += "<div class='form-group'>" 
+               + "<label for='FaqQuestionName" + i +
+                "'>Faq Question " + i +  "</label>" + 
+                "<textarea id='FaqQuestionName" + i + "' class='form-control' name='FaqQuestion-" + i + "' rows='4'></textarea>" +
+                "</div>";
+        $("#faqText").append(tbl);
+        tbl = "";
+        tbl += "<div class='form-group'>" 
+        + "<label for='FaqAnswerName" + i +
+         "'>Faq Answer " + i +  "</label>" + 
+         "<textarea id='FaqAnswerName" + i + "' class='form-control' name='FaqAnswer-" + i + "' rows='4'></textarea>" +
+         "</div>";
+        $("#faqText").append(tbl);
+        tbl = "";
+    }
+
+    
+}
+
+function createSyllabus(NoOfRec) {
+    var tbl = "";
+
+    for (var i = 1; i <= NoOfRec; i++) {
+        tbl = ""
     }
 
     

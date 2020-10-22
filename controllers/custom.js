@@ -1,9 +1,15 @@
 const admin = require('../models/firebase')
 const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config()
+}
+
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY 
+const stripePublicKey = process.env.STRIPE_PUBLIC_KEY
 
 var db = admin.firestore();
-
+const stripe = require('stripe')(stripeSecretKey)
 
 const transporter = nodemailer.createTransport(
     sendgridTransport({
@@ -304,7 +310,8 @@ exports.getPayment = async (req, res, next) => {
     res.render('course/payment', {
         Authenticated: Authenticated,
         user: user,
-        trainDoc: trainDoc
+        trainDoc: trainDoc,
+        key: stripePublicKey
     })
 }
 

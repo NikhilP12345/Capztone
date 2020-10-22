@@ -42,7 +42,7 @@
       </section>
   
       <!-- Main content -->
-      <form action="" method="post">
+    <form action="/admin/<%=id1 %>/<%=id2%>/<%=id3%>/training" method="POST">
       <form class="content">
         <div class="row">
           <div class="col-md-6">
@@ -55,7 +55,6 @@
                     <i class="fas fa-minus"></i></button>
                 </div>
               </div>
-              <form action="/admin/:adminId/:admin2Id/:admin3Id/add" method="post">
               <div class="card-body">
                 <div class="form-group">
                   <label for="inputName">Name Of the Course</label>
@@ -75,7 +74,7 @@
                 </div>
                 <div class="row">
                   <div class="col-12">
-                    <input type="submit" value="Create new Course" class="btn btn-success float-right">
+                    <input type="submit" value="Create new Event" class="btn btn-success float-right">
                   </div>
                 </div>
               </div>
@@ -85,6 +84,7 @@
           </div>
         </div>
       </form>
+    </form>
       </section>
       <!-- /.content -->
     </div>
@@ -109,24 +109,23 @@
       </section>
   
       <!-- Main content -->
-      <form action="" method="post">
+      <form action="/admin/<%=id1 %>/<%=id2%>/<%=id3%>/header" method="POST">
       <form class="content">
         <div class="row">
           <div class="col-md-6">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">General</h3>
+                <h3 class="card-title">Header</h3>
   
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                     <i class="fas fa-minus"></i></button>
                 </div>
               </div>
-              <form action="/admin/:adminId/:admin2Id/:admin3Id/add" method="post">
               <div class="card-body">
                 <div class="form-group">
-                  <label for="inputDescription">Main Page Content Head</label>
-                  <textarea id="inputDescription" class="form-control" rows="4" name="headContent"></textarea>
+                  <label for="inputDescription1">Main Page Content Head</label>
+                  <textarea id="inputDescription1" class="form-control" rows="4" name="headContent"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="noOfAbout">No of about</label>
@@ -138,23 +137,25 @@
                 </div>
                 <div class="row">
                   <div class="col-12">
-                    <input type="submit" value="Create new Course" class="btn btn-success float-right">
+                    <input type="submit" value="Create Header Event" class="btn btn-success float-right">
                   </div>
                 </div>
+
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
           </div>
         </div>
-      </form>
+        </form>
+        </form>
       </section>
       <!-- /.content -->
       </div>
       <div class="content-wrapper">
     
         <!-- Main content -->
-        <form action="" method="post">
+      <form action="/admin/<%=id1 %>/<%=id2%>/<%=id3%>/batch" method="POST">
         <form class="content">
           <div class="row">
             <div class="col-md-6">
@@ -167,7 +168,6 @@
                       <i class="fas fa-minus"></i></button>
                   </div>
                 </div>
-                <form action="/admin/:adminId/:admin2Id/:admin3Id/add" method="post">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="noOfBatches">No of Batches</label>
@@ -179,7 +179,7 @@
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <input type="submit" value="Create new Course" class="btn btn-success float-right">
+                      <input type="submit" value="Create new Batch" class="btn btn-success float-right">
                     </div>
                   </div>
                 </div>
@@ -189,13 +189,15 @@
             </div>
           </div>
         </form>
+        </form>
         </section>
         <!-- /.content -->
       </div> 
       <div class="content-wrapper">
     
         <!-- Main content -->
-        <form action="" method="post">
+      <form action="/admin/<%=id1 %>/<%=id2%>/<%=id3%>/exam" method="POST">
+
         <form class="content">
           <div class="row">
             <div class="col-md-6">
@@ -208,7 +210,6 @@
                       <i class="fas fa-minus"></i></button>
                   </div>
                 </div>
-                <form action="/admin/:adminId/:admin2Id/:admin3Id/add" method="post">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="noOfExams">No of Exams FAQ</label>
@@ -220,7 +221,7 @@
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <input type="submit" value="Create new Course" class="btn btn-success float-right">
+                      <input type="submit" value="Create new Exam" class="btn btn-success float-right">
                     </div>
                   </div>
                 </div>
@@ -230,13 +231,15 @@
             </div>
           </div>
         </form>
+        </form>
         </section>
         <!-- /.content -->
       </div> 
       <div class="content-wrapper">
     
         <!-- Main content -->
-        <form action="" method="post">
+      <form action="/admin/<%=id1 %>/<%=id2%>/<%=id3%>/faq" method="POST">
+
         <form class="content">
           <div class="row">
             <div class="col-md-6">
@@ -249,7 +252,6 @@
                       <i class="fas fa-minus"></i></button>
                   </div>
                 </div>
-                <form action="/admin/:adminId/:admin2Id/:admin3Id/add" method="post">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="noOfFaq">No of FAQ</label>
@@ -261,7 +263,7 @@
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <input type="submit" value="Create new Course" class="btn btn-success float-right">
+                      <input type="submit" value="Create new Faq" class="btn btn-success float-right">
                     </div>
                   </div>
                 </div>
@@ -271,9 +273,84 @@
             </div>
           </div>
         </form>
+        </form>
         </section>
         <!-- /.content -->
       </div> 
+      <div class="content-wrapper">
+    
+        <!-- Main content -->
+      <form action="/admin/<%=id1 %>/<%=id2%>/<%=id3%>/trainer" method="POST">
+        <form class="content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Trainer Profile</h3>
+    
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                      <i class="fas fa-minus"></i></button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="inputDescription2">Trainer Profile Content</label>
+                    <textarea id="inputDescription2" class="form-control" rows="4" name="trainerProfileContent"></textarea>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <input type="submit" value="Create new Trainer" class="btn btn-success float-right">
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+        </form>
+        </form>
+        </section>
+        <!-- /.content -->
+        </div>
+        <div class="content-wrapper">
+    
+          <!-- Main content -->
+      <form action="/admin/<%=id1 %>/<%=id2%>/<%=id3%>/placement" method="POST">
+          <form class="content">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card card-primary">
+                  <div class="card-header">
+                    <h3 class="card-title">Placements</h3>
+      
+                    <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="inputDescription4">Placements Content</label>
+                      <textarea id="inputDescription4" class="form-control" rows="4" name="placementsContent"></textarea>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <input type="submit" value="Create new Placements" class="btn btn-success float-right">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+              </div>
+            </div>
+          </form>
+          </form>
+          </section>
+          <!-- /.content -->
+          </div>
     </div>
     <div class = "tab-pane fade"id="form3" role="tabpanel" aria-labelledby="form3-tab" class = "" >
       <div class="content-wrapper">
@@ -282,7 +359,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Delete Course</h1>
+              <h1>Syllabus</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -296,54 +373,51 @@
   
       <!-- Main content -->
       <form action="" method="post">
-      <form class="content">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">General</h3>
-  
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                    <i class="fas fa-minus"></i></button>
-                </div>
-              </div>
-              <form action="/admin/:adminId/:admin2Id/:admin3Id/add" method="post">
-              <div class="card-body">
-                <div class="form-group">
-                  <label for="inputName">Name Of the Course</label>
-                  <input type="text" id="inputName" class="form-control" name="Name">
-                </div>
-                <div class="form-group">
-                  <label for="inputDescription">Train Page Content</label>
-                  <textarea id="inputDescription" class="form-control" rows="4" name="Content"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="inputClientCompany">Image Source</label>
-                  <input type="text" id="inputClientCompany" class="form-control" name="Image">
-                </div>
-                <div class="form-group">
-                  <label for="inputProjectLeader">Payment</label>
-                  <input type="text" id="inputProjectLeader" class="form-control" name = "Payment">
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <input type="submit" value="Create new Course" class="btn btn-success float-right">
+        <form class="content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Syllabus</h3>
+    
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                      <i class="fas fa-minus"></i></button>
                   </div>
                 </div>
+                <div class="card-body">
+                  <div class="form-group">
+                      <label for="inputName4">Name Of the Syllabus</label>
+                      <input type="text" id="inputName4" class="form-control" name="syllabusName">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName5">Image</label>
+                    <input type="text" id="inputName5" class="form-control" name="syllabusImage">
+                  </div>
+
+                </div>
+                <!-- /.card-body -->
               </div>
-              <!-- /.card-body -->
+              <div class="row">
+                <div class="col-12">
+                  <input type="submit" value="Create new Course" class="btn btn-success float-right">
+                </div>
+              </div>
+              <!-- /.card -->
             </div>
-            <!-- /.card -->
           </div>
-        </div>
-      </form>
+        </form>
       </section>
       <!-- /.content -->
+      </form>
     </div>
     </div>
   </div>
 
+<div>
+  <br>
+  <br>
+</div>
   <!-- /.content-wrapper -->
 
 

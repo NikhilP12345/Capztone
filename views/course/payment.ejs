@@ -1,8 +1,287 @@
-<%- include ('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>CapztOne</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/core-img/clogo.jpg">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://js.stripe.com/v3/" defer></script>
+    <script>
+         var stripePublicKey = '<%= key%>';
+    </script>
+    <script src="/additional/store.js" defer></script>
+    <!-- <link rel="stylesheet" href="/css/acc.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157522723-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-157522723-1');
+</script>
+
+</script>
+<body style="background-color: #292929;">
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 h-100">
+                        <div class="header-content h-100 d-flex align-items-center justify-content-between">
+                            <div class="academy-logo">
+                                <a href="/"><img src="/img/core-img/logo1.png" alt="" id="logo-height"></a>
+                            </div>
+                            <div class="login-content">
+                                <h3 style="color: orange;" id="call-text">Call Us At +91 74603 04567</h3>
+                            </div>
+                            <div style="margin-left: -887px; height: 100px;" id="social-top">
+                                <a href="https://www.facebook.com/Capztone-Innovative-Solution-102952757846253/?modal=admin_todo_tour" class="facebook" style="padding: 5px 7px;"><i class="fa fa-facebook" style="padding: 5px 6px;"></i></a>
+                                <a href="https://twitter.com/capztone" class="twitter" style="padding:5px 10px;"><i class="fa fa-twitter" style="padding:5px 0px;"></i></a>
+                                <!-- <a href="#" class="google"><i class="fa fa-google"></i></a> -->
+                                <a href="#" class="linkedin" style="padding: 5px 7px;"><i class="fa fa-linkedin" style="padding: 5px 5px;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="academy-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="academyNav">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/train">Training</a>
+                                        <ul class="dropdown">
+                                            <li><a href="/train/bi">Business&nbsp;Intelligence</a></li>
+                                            <li><a href="/train/data">Data&nbsp;Science</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/job">Job</a></li>
+                                    <li><a href="/solution">Solution</a></li>
+                                    <li><a href="/staff">Staffing</a></li>
+                                    <!--<li> <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUSKH3ACHFNvrxXFgGJAZQdZWFfbNwTlnL5lJyESgf6EXvJQ/viewform">Click for register</a></li> -->
+                                   
+
+                                    <!-- <li><a href="/kid">Kids&nbsp;Program</a>
+                                        <ul class="dropdown" style="width: 330px;">
+                                            <li><a href="/">Home&nbsp;tutoring&nbsp;&&nbsp;Learning&nbsp;Support</a></li>
+                                            <li><a href="/">Reading&nbsp;Fluency&nbsp;Program</a></li>
+                                            <li><a href="/">Enrichment&nbsp;Programs</a>
+                                                <ul class="dropdown dropleft" style="width: 330px;">
+                                                    <li><a href="/">Creative&nbsp;Art</a></li>
+                                                    <li><a href="/">English&nbsp;Speech</a></li>
+                                                    <li><a href="/">Debate</a></li>
+                                                    <li><a href="/">Creative Writing</a></li>
+                                                    <li><a href="/">Music</a></li>
+                                                    <li><a href="/">Art Of Speaking</a></li>
+
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li> -->
+
+                                    <li><a href="/contact">Contact</a></li>
+
+                                </ul>
+
+                            </div>
+                            <!-- Nav End -->
+                            
+                        </div>
+
+
+                    </nav>
+                </div>
+                <div
+                id="registerClass" style="float: left;
+                position: absolute;
+                margin-top: -73px;" >
+                    <% if(Authenticated){ %>
+                    <div class="dropDown">
+                        <button class="dropButton" id = "reg"><%=user.displayName%>
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                            <div class="dropDownContent">
+                                <a href="#">Receipt</a>
+                                <a href="/logout">Logout</a>
+                            </div>
+                    </div>
+                    <% } else {%>
+                        <button id="myBtn">Open Modal</button>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <a href = "/auth/google" style = "color: black">Sign in with google</a>
+                            </div>
+
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="icon-bar sticky-wrapper is-sticky" style="height: inherit; width: 29px">
+            <a href="https://www.facebook.com/Capztone-Innovative-Solution-102952757846253/?modal=admin_todo_tour" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/capztone" class="twitter"><i class="fa fa-twitter"></i></a>
+            <!-- <a href="#" class="google"><i class="fa fa-google"></i></a> -->
+            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <!-- <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> -->
+
+        </div>
+    </header>
+
     <div class="breadcumb-area bg-img" style="background-color: #292929; height: 109px;">
         <div class="bradcumbContent">
             <h2>Payment</h2>
         </div>
     </div>
+    <section class="contact-area" style="margin-top: 70px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="contact-content" id="courses-contact" style="background-color: #292929; top: 20px; margin-left: 0px">
+                        <div class="row">
+                            <!-- Contact Information -->
+                            <div class="col-12 col-lg-5">
+                                <div class="contact-information wow fadeInUp" data-wow-delay="400ms">
+                                    <div class="section-heading text-left">
+                                        <span>WHAT’S ON YOUR MIND?</span>
+                                        <h3>Get in touch with us!</h3>
+                                        <p class="mt-30">We’d love to hear from you. If you’re interested in learning more about Capztone, please submit your information here.</p>
+                                    </div>
 
-    <%- include ('../partials/footer') %>
+                                    <!-- Contact Social Info -->
+                                    <div class="contact-social-info d-flex mb-30">
+                                        <!-- <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a> -->
+                                        <a href="https://www.facebook.com/Capztone-Innovative-Solution-102952757846253/?modal=admin_todo_tour"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="https://twitter.com/capztone"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <!-- <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a> -->
+                                        <!-- <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a> -->
+                                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                    </div>
+
+                                    <!-- Single Contact Info -->
+                                    <div class="single-contact-info d-flex">
+                                        <div class="contact-icon mr-15">
+                                            <i class="icon-placeholder"></i>
+                                        </div>
+                                        <p>Kuvemphu Layout 117, 3rd Cross Road, Gubbi Cross, Kothanur, <br>Bengaluru, Karnataka 560077</p>
+                                    </div>
+
+                                    <!-- Single Contact Info -->
+                                    <div class="single-contact-info d-flex">
+                                        <div class="contact-icon mr-15">
+                                            <i class="icon-telephone-1"></i>
+                                        </div>
+                                        <p>Main: +91 74603 04567<br></p>
+                                    </div>
+
+                                    <!-- Single Contact Info -->
+                                    <div class="single-contact-info d-flex">
+                                        <div class="contact-icon mr-15">
+                                            <i class="icon-contract"></i>
+                                        </div>
+                                        <p>info@Capztone.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Contact Form Area -->
+                            <div class="col-12 col-lg-7">
+                                <div class="contact-form-area wow fadeInUp" data-wow-delay="500ms" style="background-color: #292929;">
+                                    <form action="" method="POST">
+                                        <input type="text" class="form-control" id="name" placeholder="Name" name="Name">
+                                        <input type="email" class="form-control" id="email" placeholder="E-mail" name="Email">
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message" name="Message"></textarea>
+                                        <button class="btn academy-btn mt-30" type="submit">Contact Us</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area">
+    <div class="bottom-footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Copyright &copy; All rights reserved</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ##### Footer Area Start ##### -->
+
+<!-- ##### All Javascript Script ##### -->
+<!-- jQuery-2.2.4 js -->
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/js/login/pop-up.js"></script>
+<!-- Popper js -->
+<script src="/js/bootstrap/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="/js/bootstrap/bootstrap.min.js"></script>
+<!-- All Plugins js -->
+<script src="/js/plugins/plugins.js"></script>
+<!-- Active js -->
+<script src="/js/active.js"></script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0GnVe3hVnKs7DF9KuTkXdjB4NVLWWK8U&callback=initMap"> -->
+</script>
+</body>
+
+</html>

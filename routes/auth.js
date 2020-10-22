@@ -33,7 +33,7 @@ passport.use(new GoogleStrategy({
             displayName: profile.displayName,
             Name: profile.name,
             Image: profile.photos,
-            Payment: false
+            Payment: []
         };
         const usersRef = db.collection('Users');
         const snapshot = await usersRef.where('id', '==', profile.id).get();
