@@ -1,4 +1,5 @@
 const express = require("express");
+const { app } = require("firebase-admin");
 
 const customController = require('../controllers/custom');
 
@@ -38,6 +39,8 @@ router.get("/train/:trainId", customController.getCourses)
 router.get("/train/:trainId/payment", authCheck, customController.getPayment);
 
 router.get("/train/:trainId/:syllabusId", customController.getSyllabus);
+
+router.post("/create-checkout-session", customController.postCreateSession)
 
 router.get("/EnrollNow", function(req, res) {
     res.redirect("https://docs.google.com/forms/d/e/1FAIpQLSeUSKH3ACHFNvrxXFgGJAZQdZWFfbNwTlnL5lJyESgf6EXvJQ/viewform")

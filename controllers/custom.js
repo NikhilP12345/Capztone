@@ -30,6 +30,7 @@ exports.getIndex = (req, res, next) => {
         Authenticated = true;
         user = req.user
     }
+    
     res.render("home/index",{
         Authenticated: Authenticated,
         user: user
@@ -315,6 +316,17 @@ exports.getPayment = async (req, res, next) => {
     })
 }
 
+exports.postCreateSession = async(req, res, next) => {
+    const session = await stripe.checkout.sessions.create({
+        success_url: 'http://localhost:5000/success?id={CHECKOUT_SESSION_ID}',
+        cancel_url:'http://localhost:5000/cancel',
+        payment_method_types: ['card'],
+        mode: 'payment',
+        line_items: [{
+
+        }]
+    })
+}
 exports.postRegister = (req, res, next) => {
     const body = req.body;
     

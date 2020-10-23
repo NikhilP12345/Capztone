@@ -8,6 +8,6 @@ var stripeHandler =  StripeCheckout.configure({
 
 function purchaseClicked(){
      stripeHandler.open({
-         amount: price 
+         amount: Payment  
      })
 }
