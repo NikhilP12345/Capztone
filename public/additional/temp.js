@@ -9,7 +9,8 @@ function load() {
     $("#noOfBatches").focus();
     $("#noOfExams").focus();
     $("#noOfFaq").focus();
-    $("#noOfSyllabus").focus();
+    $("#noOfTopic").focus();
+    $("#noOfPart").focus();
     $("#btnNoOfRec").click(function () {
         $("#dynamicText").empty();
         var NoOfRec = $("#noOfAbout").val();
@@ -45,12 +46,20 @@ function load() {
             createFaq(noOfFaq);
         }
     })
-    $("#btnSyllabus").click(function(){
-        $('#syllabusText').empty();
-        var noOfBatch = $("#noOfSyllabus").val();
+    $("#btnTopic").click(function(){
+        $('#topicText').empty();
+        var noOfTopic = $("#noOfTopic").val();
 
-        if(noOfBatch > 0){
-            createSyllabus(noOfBatch);
+        if(noOfTopic > 0){
+            createTopic(noOfTopic);
+        }
+    })
+    $("#btnPart").click(function(){
+        $('#partText').empty();
+        var noOfPart = $("#noOfPart").val();
+
+        if(noOfPart > 0){
+            createPart(noOfPart);
         }
     })
 }
@@ -150,11 +159,27 @@ function createFaq(NoOfRec) {
     
 }
 
-function createSyllabus(NoOfRec) {
+function createTopic(NoOfRec) {
     var tbl = "";
+    
+   
+    
+
 
     for (var i = 1; i <= NoOfRec; i++) {
-        tbl = ""
+        tbl += "<div class='form-group'>" 
+            +    "label for='topic-" + i + "' >Name of Topic</label>"
+            +    "<input type='text' id='topic-" + i + "' class='form-control' name='topic-" + i + "'>"
+            + "</div>";
+        
+        $("#topicText").append(tbl);
+        tbl = "";
+        tbl += "<div class='form-group'>"
+                + "<label for='noOfPart'>No of Topic</label>"
+                <input type="text" id="noOfTopic" class="form-control" name="topic">
+                <input type="button" value="CREATE" id="btnTopic" class="btn btn-success" style="margin-top: 3px;">
+            </div>"
+              
     }
 
     

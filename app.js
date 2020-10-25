@@ -23,6 +23,7 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session())
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')));
 
 var myLogger = function (req, res, next) {

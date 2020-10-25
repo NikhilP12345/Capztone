@@ -40,6 +40,8 @@ router.get("/train/:trainId/payment", authCheck, customController.getPayment);
 
 router.get("/train/:trainId/:syllabusId", customController.getSyllabus);
 
+router.get("/success", customController.getSuccess);
+
 router.post("/create-checkout-session", customController.postCreateSession)
 
 router.get("/EnrollNow", function(req, res) {

@@ -316,15 +316,31 @@ exports.getPayment = async (req, res, next) => {
     })
 }
 
+exports.getSuccess = (req, res, next) => {
+    console.log(req.query.id)
+    res.render("home/success")
+}
 exports.postCreateSession = async(req, res, next) => {
+    const trainRef = db.collection('Training');
+    const trainDoc = await trainRef.where("Name", "==", req.body.name).get();
+    let constId = "";
+    trainDoc.forEach((doc) => {
+        constId = doc.data().stripePaymentId;
+    })
+    console.log(constId)
     const session = await stripe.checkout.sessions.create({
         success_url: 'http://localhost:5000/success?id={CHECKOUT_SESSION_ID}',
         cancel_url:'http://localhost:5000/cancel',
         payment_method_types: ['card'],
         mode: 'payment',
         line_items: [{
-
+             price:constId,
+            quantity: 1
         }]
+    });
+
+    res.json({
+        id: session.id 
     })
 }
 exports.postRegister = (req, res, next) => {

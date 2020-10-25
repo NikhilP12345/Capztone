@@ -1,4 +1,196 @@
-<%- include ('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>CapztOne</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/core-img/clogo.jpg">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- <link rel="stylesheet" href="/css/acc.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+    <script>
+        const key = "<%= key %>"
+        const courseName = "<%= trainDoc.Name%>"
+    </script>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157522723-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-157522723-1');
+</script>
+
+</script>
+<body style="background-color: #292929;">
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 h-100">
+                        <div class="header-content h-100 d-flex align-items-center justify-content-between">
+                            <div class="academy-logo">
+                                <a href="/"><img src="/img/core-img/logo1.png" alt="" id="logo-height"></a>
+                            </div>
+                            <div class="login-content">
+                                <h3 style="color: orange;" id="call-text">Call Us At +91 74603 04567</h3>
+                            </div>
+                            <div style="margin-left: -887px; height: 100px;" id="social-top">
+                                <a href="https://www.facebook.com/Capztone-Innovative-Solution-102952757846253/?modal=admin_todo_tour" class="facebook" style="padding: 5px 7px;"><i class="fa fa-facebook" style="padding: 5px 6px;"></i></a>
+                                <a href="https://twitter.com/capztone" class="twitter" style="padding:5px 10px;"><i class="fa fa-twitter" style="padding:5px 0px;"></i></a>
+                                <!-- <a href="#" class="google"><i class="fa fa-google"></i></a> -->
+                                <a href="#" class="linkedin" style="padding: 5px 7px;"><i class="fa fa-linkedin" style="padding: 5px 5px;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="academy-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="academyNav">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/train">Training</a>
+                                        <ul class="dropdown">
+                                            <li><a href="/train/Bussiness%20Intelligence">Business&nbsp;Intelligence</a></li>
+                                            <li><a href="/train/Data%20Science">Data&nbsp;Science</a></li>
+                                            <li><a href="/train">More Courses..</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/job">Job</a></li>
+                                    <li><a href="/solution">Solution</a></li>
+                                    <li><a href="/staff">Staffing</a></li>
+                                    <!--<li> <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUSKH3ACHFNvrxXFgGJAZQdZWFfbNwTlnL5lJyESgf6EXvJQ/viewform">Click for register</a></li> -->
+                                   
+
+                                    <!-- <li><a href="/kid">Kids&nbsp;Program</a>
+                                        <ul class="dropdown" style="width: 330px;">
+                                            <li><a href="/">Home&nbsp;tutoring&nbsp;&&nbsp;Learning&nbsp;Support</a></li>
+                                            <li><a href="/">Reading&nbsp;Fluency&nbsp;Program</a></li>
+                                            <li><a href="/">Enrichment&nbsp;Programs</a>
+                                                <ul class="dropdown dropleft" style="width: 330px;">
+                                                    <li><a href="/">Creative&nbsp;Art</a></li>
+                                                    <li><a href="/">English&nbsp;Speech</a></li>
+                                                    <li><a href="/">Debate</a></li>
+                                                    <li><a href="/">Creative Writing</a></li>
+                                                    <li><a href="/">Music</a></li>
+                                                    <li><a href="/">Art Of Speaking</a></li>
+
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li> -->
+
+                                    <li><a href="/contact">Contact</a></li>
+
+                                </ul>
+
+                            </div>
+                            <!-- Nav End -->
+                            
+                        </div>
+
+
+                    </nav>
+                </div>
+                <div
+                id="registerClass" style="float: left;
+                position: absolute;
+                margin-top: -73px;" >
+                    <% if(Authenticated){ %>
+                    <div class="dropDown">
+                        <button class="dropButton" id = "reg">
+                            <img src="<%=user.Image[0].value%>" class="profilePicture">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                            <div class="dropDownContent">
+                                <a href="#">Receipt</a>
+                                <a href="/logout">Logout</a>
+                            </div>
+                    </div>
+                    <% } else {%>
+                        <button id="myBtn" class="btn" style="background-color: #292929; color: white; text-transform: uppercase;">Log In/ Sign Up</button>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h3 style="color: black; text-align: center;">Sign In With Capztone</h3>
+                                <p style="color: black;">Log in For Buying New Courses</p>
+                                <a class="g2" href="/auth/google" id="g1">
+                                    <div class="div1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 533.5 544.3" style="margin: 0 auto">
+                                            <path d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z" fill="#4285f4"></path>
+                                            <path d="M272.1 544.3c73.4 0 135.3-24.1 180.4-65.7l-87.7-68c-24.4 16.6-55.9 26-92.6 26-71 0-131.2-47.9-152.8-112.3H28.9v70.1c46.2 91.9 140.3 149.9 243.2 149.9z" fill="#34a853"></path>
+                                            <path d="M119.3 324.3c-11.4-33.8-11.4-70.4 0-104.2V150H28.9c-38.6 76.9-38.6 167.5 0 244.4l90.4-70.1z" fill="#fbbc04"></path>
+                                            <path d="M272.1 107.7c38.8-.6 76.3 14 104.4 40.8l77.7-77.7C405 24.6 339.7-.8 272.1 0 169.2 0 75.1 58 28.9 150l90.4 70.1c21.5-64.5 81.8-112.4 152.8-112.4z" fill="#ea4335"></path>
+                                        </svg>
+                                    </div>
+                                    <span style="margin: 10px 50px">Google</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="icon-bar sticky-wrapper is-sticky" style="height: inherit; width: 29px">
+            <a href="https://www.facebook.com/Capztone-Innovative-Solution-102952757846253/?modal=admin_todo_tour" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/capztone" class="twitter"><i class="fa fa-twitter"></i></a>
+            <!-- <a href="#" class="google"><i class="fa fa-google"></i></a> -->
+            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <!-- <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> -->
+
+        </div>
+    </header>
+
 
     <div class="breadcumb-area bg-img" style="background-color: #292929; height: 109px;">
         <div class="bradcumbContent">
@@ -60,19 +252,7 @@
                                 <div class="contact-form-area wow fadeInUp" data-wow-delay="500ms" style="background-color: #292929;">
                                     <p>Your Course is: <%= trainDoc.Name%></p>
                                     <p>The Amount is: <%= trainDoc.Payment%></p>
-                                    <form action="payment" method="POST">
-                                        <script
-                                            src="//checkout.stripe.com/v3/checkout.js"
-                                            class="stripe-button"
-                                            data-key="<%= key %>" 
-                                            data-amount="<%=trainDoc.Payment * 100 %>" 
-                                            data-currency="inr" 
-                                            data-name="<%=user.displayName %>" 
-                                            data-description="<%= trainDoc.Name %>" 
-                                            data-locale="auto" > 
-                                        </script>                                    
-                                        
-                                    </form>
+                                    <button type="submit" class="btn" id="paymentBtn">Pay</button>
                                 </div>
                             </div>
                         </div>
@@ -82,4 +262,38 @@
         </div>
     </section>
 
-    <%- include ('../partials/footer') %>
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area">
+    <div class="bottom-footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Copyright &copy; All rights reserved</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ##### Footer Area Start ##### -->
+
+<!-- ##### All Javascript Script ##### -->
+<!-- jQuery-2.2.4 js -->
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/js/login/pop-up.js"></script>
+<!-- Popper js -->
+<script src="/js/bootstrap/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="/js/bootstrap/bootstrap.min.js"></script>
+<!-- All Plugins js -->
+<script src="/js/plugins/plugins.js"></script>
+<!-- Active js -->
+<script src="/js/active.js"></script>
+<script src="/additional/payment.js"></script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0GnVe3hVnKs7DF9KuTkXdjB4NVLWWK8U&callback=initMap"> -->
+</script>
+</body>
+
+</html>
