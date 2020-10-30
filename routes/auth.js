@@ -56,12 +56,12 @@ router.get('/auth/google/redirect',
     passport.authenticate('google', { failureRedirect: '/login' }),
     function(req, res) {
         // res.send(req.user)
-        res.redirect("/")
+        res.redirect("/it")
     });
 
 router.get("/logout", (req,res) => {
     req.logout();
-    res.redirect("/")
+    res.redirect("/it")
 })
 
 module.exports = router;

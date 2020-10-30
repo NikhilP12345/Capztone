@@ -31,7 +31,7 @@ var myLogger = function (req, res, next) {
     next()
 }
 app.use('/admin', adminRoutes);
-app.use(customRoutes);
+app.use('/it',customRoutes);
 app.use(authRoutes);
 // app.use(errorController.get404);
 

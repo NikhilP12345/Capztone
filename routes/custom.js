@@ -7,7 +7,7 @@ const router = express.Router();
 
 const authCheck = (req, res, next) => {
     if(!req.user){
-        res.redirect("/");
+        res.redirect("/it");
     }
     else{
         next();

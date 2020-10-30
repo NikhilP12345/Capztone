@@ -329,8 +329,8 @@ exports.postCreateSession = async(req, res, next) => {
     })
     console.log(constId)
     const session = await stripe.checkout.sessions.create({
-        success_url: 'http://localhost:5000/success?id={CHECKOUT_SESSION_ID}',
-        cancel_url:'http://localhost:5000/cancel',
+        success_url: 'http://localhost:5000/it/success?id={CHECKOUT_SESSION_ID}',
+        cancel_url:'http://localhost:5000/it/cancel',
         payment_method_types: ['card'],
         mode: 'payment',
         line_items: [{
@@ -351,7 +351,7 @@ exports.postRegister = (req, res, next) => {
         return ref;
     })
     .then(doc => {
-        res.redirect("/");
+        res.redirect("/it");
         console.log("Hello")
         transporter.sendMail({
             to: "jell@capztone.com",
@@ -373,14 +373,14 @@ exports.postRegister = (req, res, next) => {
         }, (err, info) => {
             if(err){
                 console.log(err);
-                res.redirect("/")
+                res.redirect("/it")
             }
             
         });
     })
     .catch(err => {
         console.log(err)
-        res.redirect("/")
+        res.redirect("/it")
     })
 }
 
@@ -388,7 +388,7 @@ exports.postContact = (req, res, next) => {
     const body = req.body;
     let addDoc = db.collection('Record').add(body)
     .then(ref => {
-        res.redirect("/");
+        res.redirect("/it");
     })
 }
 

@@ -5,7 +5,7 @@ const button = document.getElementById('paymentBtn')
 
 button.addEventListener('click', function(e){
     e.preventDefault();
-    fetch('/create-checkout-session', {
+    fetch('/it/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
         body : JSON.stringify({
