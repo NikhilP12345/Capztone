@@ -15,3 +15,8 @@ const authCheck = (req, res, next) => {
 }
 
 router.get("/", kidController.getIndex)
+
+
+
+module.exports = router;
+

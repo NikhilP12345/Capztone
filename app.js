@@ -14,6 +14,9 @@ app.set('views', 'views');
 const adminRoutes = require('./routes/admin');
 const customRoutes = require('./routes/custom');
 const authRoutes = require('./routes/auth');
+const kidRoutes = require('./routes/kid')
+const indexRoute = require('./routes/index')
+
 
 app.use(cookieSession({
     maxAge: 24*60*60*1000,
@@ -30,8 +33,10 @@ var myLogger = function (req, res, next) {
     console.log('LOGGED')
     next()
 }
+app.use(indexRoute)
 app.use('/admin', adminRoutes);
 app.use('/it',customRoutes);
+app.use('/kid', kidRoutes)
 app.use(authRoutes);
 // app.use(errorController.get404);
 
