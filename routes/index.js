@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 router.get("/", (req, res, next) => {
-    res.redirect("/it")
+    res.render("cover/cover")
 })
 
 module.exports = router;
